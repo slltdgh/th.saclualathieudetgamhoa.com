@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Các Loại Lụa Ở Việt Nam – Kể Chuyện Đất Nước</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── HERO BANNER ── */
+    .lua-hero {
+      background: linear-gradient(135deg, var(--crimson-dark) 0%, #7a0010 60%, #3d0008 100%);
+      border-radius: 4px;
+      padding: 52px 44px;
+      margin-bottom: 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      animation: fadeInUp .5s ease both;
+    }
+    .lua-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cdefs%3E%3Cstyle%3E.g%7Bfill:none;stroke:%23c9a84c;stroke-width:0.7;opacity:0.18%7D.gf%7Bfill:%23c9a84c;opacity:0.1%7D%3C/style%3E%3C/defs%3E%3Ccircle cx='60' cy='60' r='5' class='gf'/%3E%3Ccircle cx='60' cy='60' r='5' class='g'/%3E%3Cellipse cx='60' cy='47' rx='4' ry='8' class='g'/%3E%3Cellipse cx='60' cy='73' rx='4' ry='8' class='g'/%3E%3Cellipse cx='47' cy='60' rx='8' ry='4' class='g'/%3E%3Cellipse cx='73' cy='60' rx='8' ry='4' class='g'/%3E%3Ccircle cx='60' cy='60' r='18' class='g'/%3E%3Ccircle cx='60' cy='60' r='26' class='g' stroke-dasharray='3 4'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .lua-hero h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5em, 3.5vw, 2.2em);
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-bottom: 14px;
+      position: relative;
+    }
+    .lua-hero p {
+      color: rgba(255,255,255,0.8);
+      font-size: 1.02em;
+      max-width: 640px;
+      margin: 0 auto;
+      line-height: 1.8;
+      position: relative;
+    }
+
+    /* ── LOẠI LỤA CARD ── */
+    .lua-card {
+      background: var(--white);
+      border-radius: 4px;
+      padding: 0;
+      margin-bottom: 44px;
+      box-shadow: 0 2px 30px var(--shadow);
+      border: 1px solid rgba(201,168,76,0.2);
+      overflow: hidden;
+      animation: fadeInUp .5s ease both;
+    }
+    .lua-card:nth-child(2) { animation-delay: .08s; }
+    .lua-card:nth-child(3) { animation-delay: .16s; }
+    .lua-card:nth-child(4) { animation-delay: .24s; }
+    .lua-card:nth-child(5) { animation-delay: .32s; }
+
+    .lua-card-header {
+      background: linear-gradient(100deg, var(--crimson-dark), var(--crimson));
+      padding: 22px 32px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .lua-card-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2em;
+      font-weight: 700;
+      color: var(--gold);
+      opacity: 0.75;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    .lua-card-header h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35em;
+      font-weight: 700;
+      color: var(--white);
+      margin: 0;
+      line-height: 1.3;
+    }
+    .lua-card-header h3 span {
+      display: block;
+      font-size: 0.7em;
+      font-weight: 400;
+      color: var(--gold-light);
+      font-style: italic;
+      margin-top: 3px;
+    }
+
+    .lua-card-body {
+      padding: 28px 32px 32px;
+    }
+
+    /* đặc điểm tags */
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .feature-tag {
+      background: var(--parchment);
+      border: 1px solid var(--gold-pale);
+      color: var(--crimson-dark);
+      font-size: 0.82em;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .feature-tag::before {
+      content: '✦';
+      color: var(--gold);
+      font-size: 0.75em;
+    }
+
+    /* ảnh lưới */
+    .lua-images {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 22px;
+    }
+    .lua-images img {
+      width: 100%;
+      height: 195px;
+      object-fit: cover;
+      border-radius: 3px;
+      border: 3px solid var(--gold-pale);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+      transition: transform .4s, box-shadow .4s, border-color .3s;
+      display: block;
+    }
+    .lua-images img:hover {
+      transform: scale(1.04);
+      box-shadow: 0 8px 28px rgba(139,0,0,0.2);
+      border-color: var(--gold);
+    }
+
+    /* nguồn ảnh */
+    .source-note {
+      font-size: 0.8em;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--gold-pale);
+    }
+    .source-note a {
+      color: var(--crimson);
+      text-decoration: none;
+    }
+    .source-note a:hover { text-decoration: underline; }
+
+    /* kết luận */
+    .conclusion {
+      background: linear-gradient(135deg, var(--crimson-dark) 0%, #6b0010 100%);
+      border-radius: 4px;
+      padding: 44px 40px;
+      text-align: center;
+      margin-top: 12px;
+      animation: fadeInUp .5s .4s ease both;
+      position: relative;
+      overflow: hidden;
+    }
+    .conclusion::before {
+      content: '\201C';
+      position: absolute;
+      top: -20px; left: 20px;
+      font-family: 'Playfair Display', serif;
+      font-size: 14em;
+      color: rgba(255,255,255,0.04);
+      line-height: 1;
+    }
+    .conclusion h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5em;
+      color: var(--gold-light);
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .conclusion p {
+      color: rgba(255,255,255,0.8);
+      font-size: 1em;
+      line-height: 1.85;
+      max-width: 640px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    @media (max-width: 600px) {
+      .lua-card-header { padding: 18px 20px; }
+      .lua-card-body { padding: 20px; }
+      .lua-images { grid-template-columns: 1fr 1fr; }
+      .lua-hero { padding: 36px 20px; }
+      .conclusion { padding: 36px 20px; }
+    }
+    @media (max-width: 400px) {
+      .lua-images { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-border-top"></div>
+    <div class="header-corner tl"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg"><path d="M5 5 Q45 5 85 5 Q85 45 85 85" fill="none" stroke="#c9a84c" stroke-width="1.5"/><path d="M15 5 Q15 15 5 15" fill="none" stroke="#c9a84c" stroke-width="1"/><circle cx="15" cy="15" r="4" fill="none" stroke="#c9a84c" stroke-width="1"/><circle cx="15" cy="15" r="1.5" fill="#c9a84c"/><path d="M35 5 Q35 20 20 20 Q5 20 5 35" fill="none" stroke="#c9a84c" stroke-width="0.8" stroke-dasharray="3 4"/><ellipse cx="50" cy="8" rx="6" ry="3" fill="none" stroke="#c9a84c" stroke-width="0.8" opacity="0.7"/><ellipse cx="8" cy="50" rx="3" ry="6" fill="none" stroke="#c9a84c" stroke-width="0.8" opacity="0.7"/></svg></div>
+    <div class="header-corner tr"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg"><path d="M5 5 Q45 5 85 5 Q85 45 85 85" fill="none" stroke="#c9a84c" stroke-width="1.5"/><path d="M15 5 Q15 15 5 15" fill="none" stroke="#c9a84c" stroke-width="1"/><circle cx="15" cy="15" r="4" fill="none" stroke="#c9a84c" stroke-width="1"/><circle cx="15" cy="15" r="1.5" fill="#c9a84c"/><path d="M35 5 Q35 20 20 20 Q5 20 5 35" fill="none" stroke="#c9a84c" stroke-width="0.8" stroke-dasharray="3 4"/><ellipse cx="50" cy="8" rx="6" ry="3" fill="none" stroke="#c9a84c" stroke-width="0.8" opacity="0.7"/><ellipse cx="8" cy="50" rx="3" ry="6" fill="none" stroke="#c9a84c" stroke-width="0.8" opacity="0.7"/></svg></div>
+    <div class="header-corner bl"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg"><path d="M5 5 Q45 5 85 5 Q85 45 85 85" fill="none" stroke="#c9a84c" stroke-width="1.5"/><path d="M15 5 Q15 15 5 15" fill="none" stroke="#c9a84c" stroke-width="1"/><circle cx="15" cy="15" r="4" fill="none" stroke="#c9a84c" stroke-width="1"/><circle cx="15" cy="15" r="1.5" fill="#c9a84c"/><path d="M35 5 Q35 20 20 20 Q5 20 5 35" fill="none" stroke="#c9a84c" stroke-width="0.8" stroke-dasharray="3 4"/><ellipse cx="50" cy="8" rx="6" ry="3" fill="none" stroke="#c9a84c" stroke-width="0.8" opacity="0.7"/><ellipse cx="8" cy="50" rx="3" ry="6" fill="none" stroke="#c9a84c" stroke-width="0.8" opacity="0.7"/></svg></div>
+    <div class="header-corner br"><svg viewBox="0 0 90 90" xmlns="http://www.w3.org/2000/svg"><path d="M5 5 Q45 5 85 5 Q85 45 85 85" fill="none" stroke="#c9a84c" stroke-width="1.5"/><path d="M15 5 Q15 15 5 15" fill="none" stroke="#c9a84c" stroke-width="1"/><circle cx="15" cy="15" r="4" fill="none" stroke="#c9a84c" stroke-width="1"/><circle cx="15" cy="15" r="1.5" fill="#c9a84c"/><path d="M35 5 Q35 20 20 20 Q5 20 5 35" fill="none" stroke="#c9a84c" stroke-width="0.8" stroke-dasharray="3 4"/><ellipse cx="50" cy="8" rx="6" ry="3" fill="none" stroke="#c9a84c" stroke-width="0.8" opacity="0.7"/><ellipse cx="8" cy="50" rx="3" ry="6" fill="none" stroke="#c9a84c" stroke-width="0.8" opacity="0.7"/></svg></div>
+    <div class="header-badge">Dự Án Tin Học · Kể Chuyện Đất Nước</div>
+    <h1>Các Loại <em>Lụa</em> Ở Việt Nam</h1>
+    <p class="header-sub">Tinh hoa dệt lụa trải dài từ Bắc vào Nam</p>
+    <div class="header-divider"></div>
+  </header>
+
+  <nav>
+    <a href="index.html">Trang Chủ</a>
+    <a href="chu-de.html">Cảm Hứng</a>
+    <a href="thanh-vien.html">Thành Viên</a>
+    <a href="lua-to-tam.html" class="active">Các loại lụa</a>
+    <a href="lang-nghe.html">Làng Nghề</a>
+    <a href="phan-hoi.html" class="active">Phản Hồi</a>
+  </nav>
+
+  <div class="container">
+
+    <!-- GIỚI THIỆU -->
+    <div class="lua-hero">
+      <h2>Lụa Việt Nam — Di Sản Ngàn Năm</h2>
+      <p>Việt Nam là quốc gia có truyền thống lâu đời về nghề trồng dâu, nuôi tằm và dệt lụa. Lụa Việt Nam nổi tiếng với sự <strong style="color:var(--gold-light)">mềm mại, nhẹ nhàng, thoáng mát</strong> và mang đậm giá trị văn hóa dân tộc.</p>
+    </div>
+
+    <h2 class="section-title">4 Loại Lụa Nổi Tiếng Nhất</h2>
+    <p class="section-lead">Mỗi vùng đất Việt Nam có một loại lụa mang nét đặc trưng riêng không thể nhầm lẫn</p>
+
+    <!-- 2.1 LỤA VẠN PHÚC -->
+    <div class="lua-card">
+      <div class="lua-card-header">
+        <div class="lua-card-number">01</div>
+        <h3>Lụa Vạn Phúc
+          <span>Hà Nội</span>
+        </h3>
+      </div>
+      <div class="lua-card-body">
+        <div class="features">
+          <span class="feature-tag">Mềm &amp; nhẹ</span>
+          <span class="feature-tag">Bền chắc</span>
+          <span class="feature-tag">Hoa văn tinh xảo</span>
+          <span class="feature-tag">Bề mặt óng mượt</span>
+          <span class="feature-tag">Thoáng mát</span>
+        </div>
+        <p>Lụa Vạn Phúc là một trong những loại lụa <strong>lâu đời và nổi tiếng nhất Việt Nam</strong>. Bề mặt lụa óng mượt, mặc rất thoáng mát, thường dùng để may áo dài và các trang phục cao cấp. Vẻ đẹp đặc biệt của lụa Vạn Phúc (hay còn gọi là lụa Hà Đông) là nguồn cảm hứng cho nhiều bài thơ, bài hát và phim ảnh Việt Nam.</p>
+        <div class="lua-images">
+          <img src="https://buulong.com.vn/wp-content/uploads/2026/02/san-pham-cua-lang-lua-van-phuc-5.jpg" alt="Sản phẩm làng lụa Vạn Phúc" loading="lazy">
+          <img src="https://buulong.com.vn/wp-content/uploads/2026/02/san-pham-cua-lang-lua-van-phuc-4.jpg" alt="Lụa Vạn Phúc" loading="lazy">
+          <img src="https://hnm.1cdn.vn/2025/02/11/W_lang-lua-van-phuc-1.jpg" alt="Làng lụa Vạn Phúc Hà Đông" loading="lazy">
+        </div>
+        <p class="source-note">📷 Nguồn ảnh: <a href="https://buulong.com.vn/san-pham-cua-lang-lua-van-phuc.html" target="_blank">buulong.com.vn</a></p>
+      </div>
+    </div>
+
+    <!-- 2.2 LỤA TÂN CHÂU -->
+    <div class="lua-card">
+      <div class="lua-card-header">
+        <div class="lua-card-number">02</div>
+        <h3>Lụa Tân Châu — Lãnh Mỹ A
+          <span>An Giang</span>
+        </h3>
+      </div>
+      <div class="lua-card-body">
+        <div class="features">
+          <span class="feature-tag">Màu đen tự nhiên</span>
+          <span class="feature-tag">Bóng &amp; mịn</span>
+          <span class="feature-tag">Nhuộm trái mặc nưa</span>
+          <span class="feature-tag">Quy trình công phu</span>
+          <span class="feature-tag">Giá trị cao</span>
+        </div>
+        <p>Lụa Tân Châu nổi tiếng với sản phẩm <strong>Lãnh Mỹ A</strong> — loại lụa đặc sản của vùng đất An Giang. Điểm độc đáo là màu đen tự nhiên bóng mịn, được tạo ra từ quá trình nhuộm bằng <em>trái mặc nưa</em>, một nguyên liệu hoàn toàn tự nhiên. Quy trình sản xuất rất công phu, tạo nên giá trị và sức hút đặc biệt cho loại lụa này.</p>
+        <div class="lua-images">
+          <img src="https://langngheviet.com.vn/stores/news_dataimages/langnghevietcomvn/102021/11/13/lang-lua-tan-chau-an-giang-25-.1097.jpg" alt="Lãnh Mỹ A Tân Châu" loading="lazy">
+          <img src="https://angiang360.com.vn/datafiles/261/2025-08/71094622-det-lua.jpg" alt="Lụa Tân Châu An Giang" loading="lazy">
+        </div>
+        <p class="source-note">📷 Nguồn ảnh: angiang360.com.vn</p>
+      </div>
+    </div>
+
+    <!-- 2.3 LỤA BẢO LỘC -->
+    <div class="lua-card">
+      <div class="lua-card-header">
+        <div class="lua-card-number">03</div>
+        <h3>Lụa Bảo Lộc
+          <span>Lâm Đồng</span>
+        </h3>
+      </div>
+      <div class="lua-card-body">
+        <div class="features">
+          <span class="feature-tag">Trung tâm lớn nhất VN</span>
+          <span class="feature-tag">Chất lượng ổn định</span>
+          <span class="feature-tag">Sợi chắc &amp; bền</span>
+          <span class="feature-tag">Quy mô công nghiệp</span>
+          <span class="feature-tag">Xuất khẩu lớn</span>
+        </div>
+        <p>Bảo Lộc là <strong>trung tâm sản xuất lụa lớn nhất Việt Nam</strong> hiện nay. Lụa Bảo Lộc có chất lượng ổn định, sợi lụa chắc và bền, rất phù hợp với sản xuất quy mô công nghiệp. Sản phẩm lụa Bảo Lộc chủ yếu phục vụ xuất khẩu và ngành may mặc trong nước, góp phần quan trọng vào nền kinh tế Lâm Đồng.</p>
+        <div class="lua-images">
+          <img src="https://maysilk.vn/wp-content/uploads/2022/03/to-lua-bao-loc-hanh-trinh-chinh-phuc-nguoi-tieu-dung-viet.jpg" alt="Tơ lụa Bảo Lộc" loading="lazy">
+          <img src="https://asemconnectvietnam.gov.vn/weblocalfiles/nga/thang2nam2019/122201915391tolua.jpg" alt="Lụa tơ tằm Bảo Lộc" loading="lazy">
+        </div>
+        <p class="source-note">📷 Nguồn ảnh 1: <a href="https://maysilk.vn" target="_blank">maysilk.vn</a> · Nguồn ảnh 2: <a href="https://asemconnectvietnam.gov.vn/" target="_blank">sensilk.vn</a></p>
+      </div>
+    </div>
+
+    <!-- 2.4 LỤA NHA XÁ -->
+    <div class="lua-card">
+      <div class="lua-card-header">
+        <div class="lua-card-number">04</div>
+        <h3>Lụa Nha Xá
+          <span>Hà Nam</span>
+        </h3>
+      </div>
+      <div class="lua-card-body">
+        <div class="features">
+          <span class="feature-tag">Làng nghề lâu đời</span>
+          <span class="feature-tag">Lụa mỏng &amp; nhẹ</span>
+          <span class="feature-tag">Mềm mại</span>
+          <span class="feature-tag">Hoa văn cổ truyền</span>
+          <span class="feature-tag">May áo dài truyền thống</span>
+        </div>
+        <p>Làng nghề Nha Xá là một làng nghề truyền thống <strong>lâu đời của vùng đất Hà Nam</strong>. Lụa Nha Xá có đặc điểm nổi bật là mỏng, nhẹ và mềm mại, với hoa văn mang nét cổ truyền đặc trưng. Sản phẩm thường được dùng để may áo dài truyền thống, thể hiện vẻ đẹp dịu dàng và tinh tế của phụ nữ Việt.</p>
+        <div class="lua-images">
+          <img src="https://s-aicmscdn.vietnamhoinhap.vn/vnhn-media/22/5/27/z3445613208361_4ecd5f03a014d571784af8cb91c86cd3.jpg" alt="Làng lụa Nha Xá Hà Nam" loading="lazy">
+          <img src="https://nhaxasilk.com/wp-content/uploads/2023/08/TR12-2.jpg" alt="Dệt lụa Nha Xá" loading="lazy">
+        </div>
+        <p class="source-note">📷 Nguồn ảnh 1: <a href="https://vietnamhoinhap.vn" target="_blank">vietnamhoinhap.vn</a></p> 
+      </div>
+    </div>
+
+    <!-- KẾT LUẬN -->
+    <div class="conclusion">
+      <h2>✦ Kết Luận ✦</h2>
+      <p>Các loại lụa ở Việt Nam không chỉ đa dạng về chủng loại mà còn mang <strong style="color:var(--gold-light)">nét đặc trưng riêng của từng vùng miền</strong>. Việc bảo tồn và phát triển nghề dệt lụa là rất quan trọng để giữ gìn bản sắc văn hóa dân tộc và phát triển kinh tế — để những sợi tơ vàng mãi còn óng ánh qua bao thế hệ.</p>
+    </div>
+
+  </div>
+
+  <footer>
+    <p class="footer-title">Sắc Lụa Là, Thêu Dệt Gấm Hoa</p>
+    <p>Dự Án Kể Chuyện Đất Nước · Môn Tin Học 12</p>
+    <p style="margin-top:8px">Nhóm: Khánh Hà · Thanh Hằng · Minh Châu · Trúc Anh · Minh Anh</p>
+    <p style="margin-top:8px;font-size:0.82em;opacity:0.5">&copy; 2026 Nhóm Kể Chuyện Đất Nước</p>
+  </footer>
+</body>
+</html>

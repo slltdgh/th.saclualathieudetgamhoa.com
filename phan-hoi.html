@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Góp Ý Website – Kể Chuyện Đất Nước</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .feedback-container {
+        background: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        max-width: 650px;
+        margin: 40px auto;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .feedback-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 22px;
+        color: #333;
+    }
+
+    textarea {
+        width: 100%;
+        height: 150px;
+        border-radius: 8px;
+        border: 1px solid #c9c9c9;
+        padding: 12px;
+        font-size: 15px;
+        resize: none;
+        outline: none;
+    }
+
+    textarea:focus {
+        border-color: #c9a84c;
+        box-shadow: 0 0 4px rgba(201,168,76,0.4);
+    }
+
+    .send-btn {
+        margin-top: 15px;
+        padding: 12px 26px;
+        background: #c9a84c;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 15px;
+        cursor: pointer;
+    }
+
+    .send-btn:hover {
+        background: #b8953f;
+    }
+
+    .message {
+        margin-top: 12px;
+        text-align: center;
+        color: green;
+        display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-border-top"></div>
+    <h1>Góp Ý <em>Website</em></h1>
+    <p class="header-sub">Chúng mình rất mong nhận được cảm nhận của bạn!</p>
+    <div class="header-divider"></div>
+  </header>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html">Trang Chủ</a>
+    <a href="chu-de.html">Cảm Hứng</a>
+    <a href="thanh-vien.html">Thành Viên</a>
+    <a href="lua-to-tam.html">Các loại lụa</a>
+    <a href="lang-nghe.html">Làng Nghề</a>
+    <a href="phan-hoi.html" class="active">Phản Hồi</a>
+  </nav>
+
+  <!-- PHẦN NỘI DUNG -->
+  <div class="container">
+
+    <div class="feedback-container">
+      <h2>HÃY NÊU CẢM NHẬN VÀ GÓP Ý VỀ WEBSITE CHO CHÚNG MÌNH NHÉ 💛</h2>
+
+      <textarea id="feedback" placeholder="Nhập ý kiến của bạn..."></textarea>
+
+      <button class="send-btn" onclick="submitFeedback()">Gửi</button>
+
+      <div class="message" id="message">Cảm ơn bạn đã gửi góp ý! 💛</div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p class="footer-title">Sắc Lụa Là, Thêu Dệt Gấm Hoa</p>
+    <p>Dự Án Kể Chuyện Đất Nước · Môn Tin Học 12</p>
+    <p style="margin-top:8px">Nhóm: Khánh Hà · Thanh Hằng · Minh Châu · Trúc Anh · Minh Anh</p>
+    <p style="margin-top:8px;font-size:0.82em;opacity:0.5">&copy; 2026 Nhóm Kể Chuyện Đất Nước</p>
+  </footer>
+
+  <script>
+    function submitFeedback() {
+      const feedback = document.getElementById("feedback").value;
+      const message = document.getElementById("message");
+
+      if (feedback.trim() === "") {
+          alert("Vui lòng nhập nội dung góp ý!");
+          return;
+      }
+
+      console.log("Phản hồi:", feedback);
+
+      message.style.display = "block";
+
+      document.getElementById("feedback").value = "";
+    }
+  </script>
+
+</body>
+</html>
